@@ -1,0 +1,136 @@
+.title_mybike {
+    @include gridbox(auto 200px, 0px, 0);
+
+    .icon_printbox {
+        position: relative;
+        border:  2px solid $white;
+        border-radius: 50%;
+        letter-spacing: 9px;
+        width: 120px;
+        height: 120px;
+        top: 40px;
+        transition: top 0.1s ease-in-out;
+        &:hover, &:active {
+            top: 20px;
+        }
+        .icon-printer {
+            color: $white;
+            margin-left: 5px;
+            @include rem(font-size, 6.8rem);
+            @extend %center-box;
+        }
+    }
+}
+
+.summary_mybike {
+    @include gridbox(72px 103px 110px, 30px, 0);
+
+    .icon-sidebar_mybike {
+        @include rem(font-size, 4.4rem);
+        color: $grey
+    }
+
+    > div {
+        &:before {
+            content: attr(data-title);
+            color: $grey;
+            display: block;
+        }
+    }
+}
+
+.list_ridingInfo {
+    margin-left: 0px;
+    li {
+        border-left: 3px solid $grey;
+        padding: 0 65px 0 30px;
+
+        &:before {
+            content: attr(data-title);
+            color: $grey;
+            display: block;
+        }
+    }
+}
+
+.chart_ridingInfo {
+    margin: 30px 0 0;
+}
+
+.list_smartParts {
+    @include gridbox(repeat(3, 1fr), 86px, 66px);
+    >li {
+        color: $white;
+        line-height: 1.4;
+
+        &:before {
+            content: attr(data-title);
+            display: block;
+            border-bottom: 1px solid $grey;
+            margin-bottom: 5px;
+            padding-bottom: 5px;
+        }
+
+        >ul {
+            @include reset-list;
+
+            li {
+                font-weight: 300;
+                &:before {
+                    content: attr(data-title)' : ';
+                    color: $grey;
+                    display: inline-block;
+                    min-width: 200px;
+                }
+            }
+        }
+    }
+}
+
+.content_failureHistory {
+    padding-bottom: 40px;
+    
+    .table_failureHistory {
+        margin-bottom: 0;
+        thead {
+            tr {
+                th{
+                    border-width: 1px;
+                    text-align: center;
+                    @include rem(font-size, 2.0rem);
+
+                    &:first-child {
+                        width: 150px;
+                    }
+
+                    &:nth-child(2) {
+                        width: 130px;
+                    }
+
+                    &:nth-child(3) {
+                        width: 150px;
+                    }
+
+                    &:last-child {
+                        text-align: left;
+                        width: auto;
+                    }
+                }
+            }
+        }
+        
+        tbody {
+            tr {
+                td {
+                    border-color: darken($grey, 20%);
+                    text-align: center;
+                    font-weight: 300;
+
+                    &:last-child {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,132 @@
+.nav_controler {
+    background-color: adjust_hue(saturate(lighten($black, 5%), 2%), 43%);
+    overflow: hidden;
+    position: relative;
+    width: 210px;
+
+    .btn_funcBox {
+        @include bgcLG(0deg, lighten($black, 5%), darken(rgba($grey, .85), 21%));
+        border-top-left-radius: 120px;
+        border-top-right-radius: 120px;
+        min-height: calc((100vh / 4) * 3);
+        padding: 40px 15px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        button {
+            +button {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .btn_checkStyle {
+        border-style: solid;
+        border-color: rgba($check_bgColor, .3);
+        border-width: 8px;
+        color: $white;
+
+        box-shadow: 1px 3px 6px 3px $black;
+        transition: all 2s ease-out;
+
+        &:hover, &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: scale(-1);
+        }
+
+        .icon_centerBox {
+            >span {
+                @include rem(font-size, 5rem);
+
+                +p {
+                    @include rem(font-size, 3rem);
+                    margin-top: 8px;
+                    margin-bottom: 0;
+                }
+            }
+
+            >p {
+                @include rem(font-size, 3rem);
+                margin-bottom: 0;
+            }
+        }
+
+        &.passed, &.failed {
+            >.icon_centerBox {
+                border-radius: 50%;
+                box-shadow: 1px 2px 4px 1px $grey;
+                line-height: 110px;
+                height: 110px;
+                width: 110px;
+            }
+        }
+
+        &.passed {
+            background-color: $white;
+            border-color: $green;
+            >.icon_centerBox {
+                background-color: $green;
+            }
+        }
+
+        &.failed {
+            background-color: $white;
+            border-color: $sec_color;
+            >.icon_centerBox {
+                background-color: $sec_color;
+            }
+        }
+    }
+
+    .anime_clrcleDotBox {
+        background-color: darken($grey, 18%);
+        border-radius: 50%;
+        @include flexbox;
+        width: 180px;
+        height: 180px;
+
+        .anime_subDot {
+            animation: loadingFade 1.5s infinite;
+            background-color: $grey;
+            border-radius: 50%;
+            display: block;
+            width: 22px;
+            height: 22px;
+            &:nth-child(1) {
+                animation-delay: 0s;
+                margin-right: 5px;
+            }
+
+            &:nth-child(2) {
+                animation-delay: 0.3s;
+                margin-right: 5px;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 0.5s;
+            }
+        }
+    }
+}
+
+@keyframes loadingFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}

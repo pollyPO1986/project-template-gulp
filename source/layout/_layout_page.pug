@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		include ../include/_head.pug
+	body
+		include ../include/_navbar.pug
+
+		.content
+			block breadcrumb
+			.container-fluid
+				.row
+					.col-xs-12
+						block content
+
+			
+		//- include ../include/_footer.pug
+
+		block lightbox

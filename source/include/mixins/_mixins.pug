@@ -1,0 +1,26 @@
+mixin navbar_child(href,name,number)
+	li
+		a(href=href) #{name}
+			span.tips #{number}
+
+mixin navbar_topmenu(title,name)
+	li(data-tit=title) #{name}
+
+mixin navbar_diagnosis(href,pic,item)
+	li
+		a(href=href)
+			span.listImg(style=pic)
+			span #{item}
+			block
+
+mixin navbar_diagnosis_over(href,pic,item)
+	li
+		a(href=href)
+			span.listImg(style=pic)
+			span #{item}
+			span.recheck.passed
+				p Recheck
+
+mixin piechart_data(title,name)
+	li(data-tit=title) 
+		span #{name}

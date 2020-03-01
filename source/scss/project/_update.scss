@@ -1,0 +1,165 @@
+.title_update {
+    position: relative;
+    h1 {
+        display: inline-block;
+    }
+    >.btn-default {
+        margin-left: 55px;
+        vertical-align: text-bottom;
+        width: 300px;
+
+        &:disabled {
+            border-color: $side_textcolor;
+            color: lighten($side_btncolor, 20%);
+        }
+
+        &:active, &:focus {
+            outline: none;
+        }
+    }
+}
+
+.box_updateContent {
+    @include gridbox(150px auto, 0, 0);
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .grid_tableTitle {
+        padding-left: 20px;
+
+        > .column_title {
+            &:nth-child(1) {
+                height: 84px;
+                line-height: 84px;
+            }
+            &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+                height: 70px;
+                line-height: 70px;
+            }
+        }
+        .block_itemTitle {
+            height: 225px;
+            line-height: 225px;
+
+            >.column_title {
+                display: inline-block;
+                height: 66px;
+                vertical-align: middle;
+
+                span {
+                    display: block;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+}
+
+.list_tableContent {
+    @include gridbox(repeat(4,1fr),0, 0);
+    font-size: 0;
+    @include reset-list;
+
+    li {
+        color: $grey;
+        @include rem(font-size, 1.8rem);
+        text-align: center;
+
+        &:last-child {
+            .block_individual{
+                border-right: 1px solid darken($grey, 20%);
+            }
+        }
+
+        .block_individual {
+            border-width: 1px 0px 1px 1px;
+            border-color: darken($grey, 20%);
+            border-style: solid;
+            text-align: center;
+
+            .part_items {
+                color: $white;
+                padding: 20px 0;
+                >span {
+                    display: block;
+                }
+            }
+
+            .part_hardware, .part_software, .part_latestSoftware {
+                line-height: 70px;
+                height: 70px;
+            }
+        }
+
+        .part_benefits{
+            @extend %words;
+            font-weight: 300;
+            line-height: 140%;
+            text-align: left;
+            padding: 50px 15px;
+        }
+
+        .block_funcBox {
+            @include rem(font-size, 1.8rem);
+
+            .txt_latestVerion {
+                height: 60px;
+                line-height: 60px;
+            }
+
+            .failed {
+                background-color: $sec_color;
+                border-color: $sec_color;
+                &:active {
+                    background-color: darken($sec_color, 5%);
+                }
+            }
+
+            .test_failed {
+                display: inline-block;
+                @include rem(font-size, 1.8rem);
+                margin-top: 40px;
+                height: 35px;
+                position: relative;
+
+                &:before, &:after {
+                    display: inline-block;
+                }
+
+                &:after {
+                    content: '\e90f';
+                    color: $white;
+                    @extend %icons-m;
+                    @include rem(font-size, 1.2rem);
+                    position: absolute;
+                    top: 50%;
+                    left: 11px;
+                    transform: translateY(-50%);
+                }
+
+                &:before {
+                    background-color: $red;
+                    border-radius: 50%;
+                    content: '';
+                    margin-right: 15px;
+                    vertical-align: -8px;
+                    width: 35px;
+                    height: 35px;
+                    z-index: -1;
+                }
+            }
+            .btn_update {
+                border-radius: 40px;
+                letter-spacing: 1px;
+                width:150px;
+                height: 60px;
+
+                &:hover, &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}

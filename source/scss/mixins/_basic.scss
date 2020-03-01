@@ -1,0 +1,45 @@
+// logo
+@mixin logo($image, $position:left top, $logo-w:200px, $logo-h:52px, $size:contain) {
+  background-image: $image;
+  background-position: $position;
+  background-size: $size;
+  background-repeat: no-repeat;
+  width: $logo-w;
+  height: $logo-h;
+  margin: 0 auto;
+}
+
+// logo title hidden
+@mixin logo-titleHide {
+	text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// bg setting
+@mixin bgimg($bgposition:center center,$bgsize:cover) {
+	background-repeat: no-repeat;
+  background-position: $bgposition;
+  background-size: $bgsize;
+}
+
+// reset list style
+@mixin reset-list($margin:0, $padding:0) {
+  margin: $margin;
+  padding: $padding;
+  list-style: none;
+}
+
+@mixin clearfix {
+  @supports (display:flow-root) {
+    display: flow-root;
+  }
+
+  @supports not (display:flow-root) {
+    &::after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+  }
+}

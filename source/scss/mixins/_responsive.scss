@@ -1,0 +1,26 @@
+// media query
+
+// For all 1366 ~ 1980 up
+@mixin normal-width(){
+	@media all and (min-width: $tb-winpc-media){
+		@content;
+	}
+}
+
+@mixin mac-width(){
+	@media all and (max-width: $tb-apple-media){
+		@content;
+	}	
+}
+
+@mixin nb-width(){
+	@media all and (max-width: $tb-winpc-media){
+		@content;
+	}
+}
+
+@mixin snb-width(){
+	@media all and (max-width: $tb-winspc-media){
+		@content;
+	}
+}

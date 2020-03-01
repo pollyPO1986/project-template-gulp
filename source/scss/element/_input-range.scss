@@ -1,0 +1,147 @@
+@import '../project/variable';
+$thumbHeight: 28px;
+$thumbBorderWidth: 0;
+$trackColor :#ccc;
+$activeTrackColor: $grey;
+$trackHeight: 4px;
+$thumbColor: $white;
+$activeThumbColor: draken($main_color, 20%);
+
+$inputBgHeight: $thumbHeight + ( 2 * $thumbBorderWidth);
+$thumbPiace: -(($inputBgHeight - $trackHeight) / 2);
+
+// input [type="range"]
+
+// *** setting border、background ***
+// chrome & safari => 偽類 -webkit-slider-runnable-track
+// firefox => 偽類 -moz-range-track
+// IE => 多了 tick 進行分割，偽類 -ms-track
+
+// *** setting control button style ***
+// chrome & safari => 偽類 -webkit-slider-thumb
+// firefox => 偽類 -moz-range-thumb
+// IE => 偽類 -ms-thumb
+
+input[type="range"]{
+  -webkit-appearance: none; // remove 預設的底色bar
+  background: transparent;
+  border-radius: $trackHeight;
+  width: 100%;
+  outline : none; // 取消聚焦邊框
+  // overflow-x: hidden; //有使用陰影時，要mark掉
+  height: $inputBgHeight;
+  border: 0; // for firefox on android
+  padding: 0; // for IE
+}
+
+// chrome 、 opera
+input[type="range"]::-webkit-slider-runnable-track {
+  background: $trackColor;
+  border-radius: $trackHeight;
+  height: $trackHeight;
+  transition: .3s;
+}
+
+// input[type="range"]:hover::-webkit-slider-runnable-track,
+// input[type="range"]:focus::-webkit-slider-runnable-track {
+//   background: $activeTrackColor;
+// }
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  background: $thumbColor;
+  border-radius:50%;
+  cursor: pointer;
+  margin-top: $thumbPiace;
+  width: $inputBgHeight;
+  height: $inputBgHeight;
+  box-shadow: 0px 3px 15px 1px rgba(0, 0, 0, 1);
+}
+
+input[type="range"]:hover::-webkit-slider-thumb,
+input[type="range"]:focus::-webkit-slider-thumb {
+  background: $activeThumbColor;
+}
+
+// firefox
+input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+input[type="range"]::-moz-range-track {
+  background: $trackColor;
+  border-radius: $trackHeight;
+  height: $trackHeight;
+  // firefox bg isn't animatable, so can't use transition
+}
+input[type="range"]:hover::-moz-range-track,
+input[type="range"]:focus::-moz-range-track {
+  background: $activeTrackColor;
+}
+input[type="range"]::-moz-range-thumb {
+  background: $thumbColor;
+  border: 1px solid $thumbColor;
+  border-radius:50%;
+  cursor: pointer;
+  width: $thumbHeight;
+  height: $thumbHeight;
+}
+input[type="range"]:hover::-moz-range-thumb,
+input[type="range"]:focus::-moz-range-thumb {
+  background: $activeThumbColor;
+  border: 1px solid $activeThumbColor;
+}
+input[type="range"]::-moz-range-progress {
+  background: $thumbColor;
+  border-radius: $trackHeight;
+  height: $trackHeight;
+}
+input[type="range"]:hover::-moz-range-progress,
+input[type="range"]:focus::-moz-range-progress {
+  background: $activeThumbColor;
+}
+
+//edge and IE
+input[type="range"]::-ms-track {
+  background: $trackColor;
+  border-radius: $trackHeight;
+  height: $trackHeight;
+
+  border: 0;
+  color: transparent;
+}
+
+input[type="range"]:hover::-ms-track,
+input[type="range"]:focus::-ms-track {
+  background: $activeTrackColor;
+}
+
+input[type="range"]::-ms-thumb {
+  background: $thumbColor;
+  border-radius:50%;
+  cursor: pointer;
+  width: $thumbHeight;
+  height: $thumbHeight;
+  border: none;
+  margin: 0 $thumbBorderWidth 0;
+  box-shadow: 0 0 0 $thumbBorderWidth $white; // box-shadow color should match the background
+  // cursor:pointer; IE doesn't work
+}
+
+input[type="range"]:hover::-ms-thumb,
+input[type="range"]:focus::-ms-thumb {
+  background: $activeThumbColor;
+}
+
+input[type="range"]::-ms-tooltip {
+  display: none; // tooltip makes thumb sliding lagy
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: $thumbColor;
+    border-radius: $trackHeight;
+}
+
+input[type="range"]:hover::-ms-fill-lower,
+input[type="range"]:focus::-ms-fill-lower {
+  background: $activeThumbColor;
+}

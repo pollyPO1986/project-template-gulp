@@ -1,0 +1,46 @@
+// input placeholder style
+::-webkit-input-placeholder {
+  //- Chrome
+  color: $grey;
+  @include rem(font-size, 1.3rem);
+  transition: opacity 250ms ease-in-out;
+}
+
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+  //- IE 10+
+  color: $grey;
+  @include rem(font-size, 1.3rem);
+  transition: opacity 250ms ease-in-out;
+}
+
+:focus:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+::-moz-placeholder {
+  //- Firefox 19+
+  color: $grey;
+  @include rem(font-size, 1.3rem);
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+
+:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+
+:-moz-placeholder {
+  //- Firefox 4 - 18
+  color: $grey;
+  @include rem(font-size, 1.3rem);
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+
+:focus:-moz-placeholder {
+  opacity: 0.5;
+}

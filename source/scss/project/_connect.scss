@@ -1,0 +1,160 @@
+.box_outline {
+    color: $white;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .btn_back {
+        background-color: $main_color;
+        display: inline-block;
+        border-radius: 50%;
+        margin-left: 30px;
+        margin-right: 20px;
+        width: 42px;
+        height: 42px;
+        position: relative;
+        vertical-align: middle;
+        &::after {
+          content: '\f104';
+          color: $white;
+          @extend %icons-m;
+          display: inline-block;
+          @include rem(font-size, 2.8rem);
+          @extend %center-box;
+        }
+    }
+    .txt_back {
+        display: inline-block;
+        @include rem(font-size, 2.4rem);
+        letter-spacing: 2px;
+        vertical-align: middle;
+    }
+}
+
+.box_connectType {
+    @include rem(font-size, 9rem);
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+.area_countdown {
+    cursor: default;
+}
+.page_connect {
+    padding-top: 50px;
+    position: relative;
+    height: calc(100vh - 56px);
+    @include nb-width {
+        padding-top: 40px;
+    }
+
+    &:after {
+        background-color: $main_color;
+        content: '';
+        display: block;
+        height: 24px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+    
+    .area_workPlace {
+        background-color: lighten($black, 8%);
+        @include flexbox();
+        flex-direction: column;
+        min-height: calc(100vh - 256px);
+        padding: 60px;
+        position: relative;
+        @include nb-width {
+            padding: 30px;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            box-shadow: 0 0 12px 6px rgba(darken($black, 10%),.8);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+        .icon_centerBox {
+            @include rem(font-size, 10rem);
+            .txt_small {
+                @include rem(font-size, 6rem);
+            }
+        }
+    }
+
+    .list_connectDesc {
+        margin: 0 0 20px;
+
+        li {
+            @include rem(font-size, 2.4rem);
+            @include gridbox(92px 120px auto, 0, 0);
+            font-weight: 300;
+
+            &:before {
+                align-self: center;
+                font-weight: 400;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 3vh;
+            }
+
+            >span, >img {
+                @include rem(font-size, 4rem);
+                align-self: center;
+                justify-self: center;
+            }
+        }
+        p {
+            margin-bottom: 0;
+            align-self: center;
+        }
+    }
+}
+
+.list_choiceType {
+    // @include flexbox(space-around);
+    @include gridbox(repeat(3,1fr), 0, 0);
+    @include reset-list;
+    // min-width: 76%;
+    // max-width: calc(100vw - 120px);
+    width: calc(100vw - 120px);
+
+    li {
+        align-self: center;
+        justify-self: center;
+        text-align: center;
+        position: relative;
+
+        &:not(:last-child) {
+            &:after {
+                content: 'or';
+                display: block;
+                @include rem(font-size, 4.8rem);
+                font-weight: 300;
+                width: 40px;
+                height: 40px;
+
+                position: absolute;
+                top: 50%;
+                right: -50%;
+            }
+        }
+
+        .title_greenText {
+            margin-top: 10px;
+        }
+
+        p {
+            @include rem(font-size, 2.4rem);
+            margin-bottom: 0;
+        }
+    }
+}

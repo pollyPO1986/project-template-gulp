@@ -1,0 +1,80 @@
+.page_titlebar {
+  .txt_title {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      @include rem(font-size, 3.5rem);
+      @extend %icons-m;
+      display: inline-block;
+      content: '\e904';
+      position: absolute;
+      margin-left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.flex_container {
+  @include flexbox(flex-start);
+  margin-top: 50px;
+
+  .flex_currentODO {
+    position: relative;
+    padding-left: 70px;
+    padding-right: 70px;
+
+    &::before{
+      color: $red;
+      display: inline-block;
+      position: absolute;
+      content: url(~@/assets/images/maintenance/yourODO.svg);
+      left: 0;
+      top: 40%;
+      transform: translateY(-40%);
+    }
+  }
+
+  .flex_nextODO {
+    margin-left: 20px;
+  }
+}
+
+.item_odo {
+  @include rem(font-size, 2.4rem);
+  display: inline-block;
+  letter-spacing: 2px;
+
+  .txt_odo {
+    @include rem(font-size, 6.4rem);
+    position: relative;
+
+    &::after{
+      @include rem(font-size, 1.8rem);
+      display: inline-block;
+      position: absolute;
+      padding-left: 10px;
+      content: 'km';
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.txt_description {
+  margin-top: 30px;
+  letter-spacing: 2px;
+}
+
+.img_arrow {
+  width: 146px;
+}
+
+.btn_completed {
+  width: 200px;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}

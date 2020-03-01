@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		include ../include/_head.pug
+	body
+		include ../include/_navbar.pug
+
+		.content
+			.fullbox
+				.fullbox_cont
+					block content
+				.noticebox
+					block contenttips
+			
+		include ../include/_footer.pug
+
+		block lightbox

@@ -1,0 +1,39 @@
+.brand_infoBox {
+    @include rem(font-size, 5rem);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    .icon_wrongConnect {
+        color: $red;
+        @include rem(font-size, 3.5rem);
+    }
+    .subtitle_connectFail {
+        color: $red;
+        display: inline-block;
+        font-weight: 700;
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+}
+
+.area_errorMegBox {
+    min-height: 240px;
+    h3 {
+        @include rem(font-size, 2.4rem);
+        margin: 0 0 20px;
+    }
+}
+
+.btn_connectFail {
+    position: absolute;
+    bottom: 60px;
+    @include nb-width {
+        bottom: 40px;
+    }
+    .btn_group {
+        width: 300px;
+        padding: 13px;
+        border-radius: 40px;
+    }
+}

@@ -1,0 +1,26 @@
+// project base setting
+@import 'project/variable';
+
+// plugins
+@import 'project/plugins/bootstrap-custom';
+
+// Layout
+@import 'project/layout/header';
+@import 'project/layout/sidebar';
+
+// project pages
+@import 'project/common';
+@import 'project/welcome';
+@import 'project/prepareconnect';
+@import 'project/connect';
+@import 'project/connectfail';
+@import 'project/diagnosis';
+@import 'project/diagnosis-checking';
+@import 'project/diagnosis-warning';
+@import 'project/operators';
+@import 'project/update';
+@import 'project/language';
+@import 'project/setting';
+@import 'project/support';
+@import 'project/mybike';
+@import 'project/maintenance';

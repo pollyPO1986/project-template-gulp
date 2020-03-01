@@ -1,0 +1,65 @@
+.set_support {
+    top: 6px;
+}
+
+.list_supportList {
+    @include reset-list;
+    margin-top: 29px;
+    li {
+        background-color: $side_btncolor;
+        border-radius: 20px;
+        box-shadow: 1px 2px 8px 1px $check_bgColor;
+        padding: 30px;
+        position: relative;
+        min-height: 210px;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        &:after {
+            display: block;
+            @extend %icons-m;
+            @include rem(font-size, 14rem);
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+        }
+
+        &:first-child {
+            &::after {
+                color: darken($grey, 30%);
+                content: '\e901';
+            }
+        }
+
+        &:nth-child(2) {
+            &::after {
+                color: darken($grey, 15%);
+                content: '\e902';
+            }
+        }
+
+        &:last-child {
+            &::after {
+                color: $grey;
+                @include rem(font-size, 11rem);
+                content: '\e903';
+            }
+        }
+
+        .title_supportTitle {
+            @include rem(font-size, 4.8rem);
+            margin-top: 0;
+            margin-bottom: 36px;
+        }
+
+        p {
+            margin-bottom: 0;
+            + p {
+                margin-top: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,147 @@
+//------------------------------------------------------ BS Model
+.modal-open {
+  overflow: hidden;
+
+  .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  outline: 0;
+}
+
+.modal-dialog {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: $white;
+
+  &.fade {
+    opacity: 0;
+  }
+
+  &.show {
+    opacity: 0.6;
+  }
+}
+
+.modal-content {
+  position: absolute;
+  background-color: $black;
+  background-clip: padding-box;
+  border-radius: 2px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  top: 50%;
+  right: auto;
+  min-height: 300px;
+  max-height: 84vh;
+  width: 90%;
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+}
+
+.modal-body {
+  position: relative;
+  flex-grow: 100;
+  padding: 15px;
+  overflow: auto;
+
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.modal-header {
+  padding: 0;
+  border-bottom: 0;
+  line-height: 15px;
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+
+  .close {
+    padding: 15px;
+    line-height: inherit;
+  }
+}
+
+.modal-footer {
+  padding: 7.5px;
+  border-top: 0;
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+.modal-lg {
+  .modal-body {
+    max-height: calc(84vh - 100px);
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+    }
+  }
+
+  .modal-content {
+    min-height: 84vh;
+    height: 84vh;
+    max-height: 84vh;
+    width: 90%;
+    max-width: 90%;
+  }
+}
+
+.modal-sm {
+  .modal-body {
+    padding: 45px;
+  }
+
+  .modal-content {
+    min-height: 200px;
+    max-height: 84vh;
+    max-width: 400px;
+  }
+}

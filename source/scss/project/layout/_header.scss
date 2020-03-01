@@ -1,0 +1,190 @@
+// navbar
+.nav_header {
+    padding: 8px 20px 8px 30px;
+    height: 56px;
+    overflow: hidden;
+
+    .nav_leftBikeInfo {
+        @include flexbox(flex-start);
+        float: left;
+        font-weight: 300;
+        height: 40px;
+        width: calc(100% - 300px);
+
+        > .list_inlineHasTitle {
+            li {
+                &:before {
+                    content: attr(data-title);
+                    color: $side_textcolor;
+                    margin-right: 20px;
+                }
+
+                + li {
+                    margin-left: 36px;
+                }
+            }
+        }
+    }
+
+    .nav_rightToolbar {
+        @include reset-list;
+        float: right;
+        font-size: 0;
+
+        li {
+            display: inline-block;
+            @include rem(font-size, 1.8rem);
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            &:nth-last-child(4) {
+                a {
+                    &.on {
+                        color: $main_color;
+                        &:hover, &:focus {
+                            color: $main_color;
+                        }
+                    }
+                    span {
+                        @include rem(font-size, 3rem);
+                    }
+                }
+            }
+
+            &:nth-last-child(3) {
+                a {
+                    &.off {
+                        >span:after {
+                            display: none;
+                        }
+                    }
+                    &.on {
+                        color: $red;
+                        &:hover, &:focus {
+                            color: $red;
+                        }
+                    }
+                }
+                span {
+                    position: relative;
+                    &:after {
+                        background-color: $white;
+                        border-radius: 50%;
+                        content: attr(data-tip);
+                        color: $black;
+                        display: inline-block;
+                        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                        @include rem(font-size, 1rem);
+                        line-height: 1;
+                        text-align: center;
+                        padding: 2px 4px;
+
+                        position: absolute;
+                        top: 0;
+                        right: -6px;
+                    }
+                }
+            }
+
+            &:nth-last-child(2) {
+                a {
+                    &.on, &:hover, &:focus {
+                        color: $white;
+
+                        .icon-header_support::before {
+                            content: '\e91f';
+                        }
+                    }
+                }
+            }
+
+            &:last-child {
+                border-left: 1px solid $white;
+                padding-left: 20px;
+                span {
+                    @include rem(font-size, 3.2rem);
+                }
+            }
+        }
+
+        a {
+            display: block;
+            color: $white;
+            position: relative;
+
+            &:hover, &:focus {
+                color: $main_color;
+                &:after {
+                    content: '';
+                    display: block;
+                    @include triangle(transparent transparent $white transparent, 0 3px 6px 3px);
+                    width: 6px;
+                    height: 6px;
+                    margin-top: 5px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            span {
+                @include rem(font-size, 3.4rem);
+            }
+
+            &.on {
+                &:after {
+                    content: '';
+                    display: block;
+                    @include triangle(transparent transparent $white transparent, 0 3px 6px 3px);
+                    width: 6px;
+                    height: 6px;
+                    margin-top: 5px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+
+            &.off {
+                color: $grey;
+                cursor: default;
+
+                &:hover, &:focus {
+                    color: $grey;
+                }
+            }
+        }
+    }
+}
+
+.bluetooth_signal {
+    @include flexbox(flex-start);
+    border-right: 1px solid rgba($grey, .3);
+    margin-right: 30px;
+    padding-right: 30px;
+    height: 40px;
+
+    .status_bluetoothSignal {
+        border: 2px solid transparent;
+        border-radius: 50%;
+        display: block;
+        margin-left: 5px;
+        width: 14px;
+        height: 14px;
+
+        &.high {
+            background-color: $green;
+            border-color: lighten($green, 10%);
+        }
+        &.low {
+            background-color: $orange;
+            border-color: lighten($orange, 10%);
+        }
+        &.disconnect {
+            background-color: $red;
+            border-color: lighten($red, 10%);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.welecome_wrap {
+    height: 100vh;
+    
+    .welcome_logo{
+        display: inline-block;
+        
+        h1 {
+            @include logo(url('~@/assets/images/logo_w.svg'), center, 460px, 85px);
+            @include logo-titleHide();
+            @extend %center-box;
+            padding: 0;
+        }
+    }
+}

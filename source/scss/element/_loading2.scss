@@ -1,0 +1,111 @@
+@import '../project/variable';
+$box_outlineWidth: 300px;
+$box_outlineMargin: -($box_outlineWidth / 2);
+$box_insideWidth: $box_outlineWidth - 60px;
+$box_insideMargin: -($box_insideWidth / 2);
+$box_textWidth: $box_insideWidth - 40px;
+$box_textMargin: -($box_textWidth / 2);
+
+.lmask {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: $check_bgColor;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    opacity: .85;
+
+    &:before, &:after {
+        content: '';
+        background-color: rgba($check_bgColor, 0);
+        border: 5px solid rgba($main_color, 0.9);
+        opacity: 0.9;
+        border-right: 5px solid rgba($check_bgColor, 0);
+        border-left: 5px solid rgba($check_bgColor, 0);
+        border-radius: 50%;
+    }
+
+    p, &:before, &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+
+    &:before {
+        box-shadow: 0 0 35px $main_color;
+        width: $box_outlineWidth;
+        height: $box_outlineWidth;
+        -moz-animation: spinPulse 1s infinite ease-in-out;
+        -webkit-animation: spinPulse 1s infinite linear;
+
+        margin: $box_outlineMargin 0 0 $box_outlineMargin;
+    }
+    &:after {
+        box-shadow: 0 0 15px $main_color;
+        width: $box_insideWidth;
+        height: $box_insideWidth;
+        -moz-animation: spinoffPulse 1s infinite linear;
+        -webkit-animation: spinoffPulse 1s infinite linear;
+
+        margin: $box_insideMargin 0 0 $box_insideMargin;
+    }
+
+    p {
+        color: $white;
+        line-height: $box_textWidth;
+        text-align: center;
+        margin: $box_textMargin 0 0 $box_textMargin;
+        width: $box_textWidth;
+        height: $box_textWidth;
+    }
+}
+
+@-moz-keyframes spinPulse {
+    0% {
+        -moz-transform:rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px $main_color;
+    }
+    50% {
+        -moz-transform: rotate(145deg);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: rotate(-320deg);
+        opacity: 0;
+    }
+}
+@-moz-keyframes spinoffPulse {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spinPulse {
+    0% {
+        -webkit-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px $main_color;
+    }
+    50% {
+        -webkit-transform: rotate(145deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: rotate(-320deg);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes spinoffPulse {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}

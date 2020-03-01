@@ -1,0 +1,29 @@
+.btn {
+    line-height: 1;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $white;
+    }
+    +.btn {
+        margin-left: 15px;
+    }
+}
+
+$clrcle:
+    "xs" 50px, 
+    "sm" 180px, 
+    "md" 240px, 
+    "lg" 360px;
+
+@each $name, $size in $clrcle {
+  .btn_clrcle_#{$name} {
+    background-color: $main_color;
+    border-radius: 50%;
+    color: $black;
+    display: block;
+    position: relative;
+    width: $size;
+    height: $size;
+  }
+}

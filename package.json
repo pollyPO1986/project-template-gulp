@@ -1,0 +1,36 @@
+{
+  "name": "mask-map",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "pollyPO",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-load-plugins": "^2.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sequence": "^1.0.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "browserslist": [
+    "last 3 version",
+    "> 5%"
+  ],
+  "dependencies": {
+    "gulp-if": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "minimist": "^1.2.0"
+  }
+}

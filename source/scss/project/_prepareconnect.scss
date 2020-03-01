@@ -1,0 +1,40 @@
+.btn_prepare{
+    margin: {
+        top: 50px;
+        bottom: 42px;
+    }
+
+    .icon_centerBox {
+        top: 52%;
+
+        > p{
+            @include rem(font-size, 2.4rem);
+            letter-spacing: 3px;
+            margin-bottom: 0;
+        }
+    }
+    
+    .icon_prepare {
+        position: relative;
+        height: 36px;
+        span {
+            display: inline-block;
+            position: absolute;
+            @include rem(font-size, 2.8rem);
+            &:nth-child(1) {
+                left: 10px;
+                top: 0;
+            }
+            &:nth-child(2) {
+                left: 58px;
+                top: -2px;
+            }
+            &:nth-child(3) {
+                right: 10px;
+                top: -9px;
+                @include rem(font-size, 2.6rem);
+                transform: rotate(-0.25turn);
+            }
+        }
+    }
+}
