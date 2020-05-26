@@ -11,6 +11,8 @@ tags: 'Gulp, Sass, Babel, Pug'
 ## 安裝
 
 需要先安裝 Gulp (此範例是 Gulp v3.9.1)
+Node.js version 11.15.0
+
 _yarn global add [gulp]@[3.9.1]_
 _yarn install (安裝 package.json 內的套件)_
 
