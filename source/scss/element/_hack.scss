@@ -1,11 +1,39 @@
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0;
+a {
+  &:link {
+    //-還沒被訪問的樣式
+    text-decoration: none;
+  }
+
+  &:active {
+    //-滑鼠按下的樣式
+    text-decoration: none;
+  }
+
+  &:visited {
+    //-被訪問過的樣式
+    text-decoration: none;
+  }
+
+  &:hover {
+    //-滑鼠滑過的樣式
+    text-decoration: none;
+  }
+
+  &:focus {
+    //-鍵盤聚焦的樣式
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 // firefox
-input[type=number] {
-    -moz-appearance:textfield;
+input[type='number'] {
+  -moz-appearance: textfield;
 }

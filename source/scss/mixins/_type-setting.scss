@@ -1,0 +1,24 @@
+// Flex
+@mixin flexbox($justify: center, $align: center, $wrap: nowrap, $display: flex) {
+  display: $display;
+  flex-wrap: $wrap;
+  justify-content: $justify; // X
+  align-items: $align; // Y
+}
+
+// Grid
+@mixin gridbox($columns: repeat(3, 1fr), $column-gap: 30px, $row-gap: 30px, $rows: none, $display: grid) {
+  display: $display;
+  grid-template-columns: $columns; //- repeat(重覆次數,單位)
+  grid-template-rows: $rows;
+  grid-column-gap: $column-gap; //- 左右間格
+  grid-row-gap: $row-gap; //- 欄跟欄的上下間格
+}
+
+// Box center
+@mixin center-box() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

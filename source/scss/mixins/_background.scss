@@ -1,0 +1,11 @@
+// background setting
+@mixin bg-images($bgposition: center center, $bgsize: cover) {
+  background-repeat: no-repeat;
+  background-position: $bgposition;
+  background-size: $bgsize;
+}
+
+// 背景漸層
+@mixin bg-gradient($direction, $c1, $c2) {
+  background: linear-gradient($direction, $c1 0, $c2 100%);
+}

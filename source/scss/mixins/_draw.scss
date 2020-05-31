@@ -1,24 +1,18 @@
 // 圓形
-@mixin circle($size,$c-bgcolor) {
+@mixin circle($size, $c-bgcolor) {
   width: $size;
   height: $size;
   font-size: $size/3;
-  line-height: $size+2px;
-  background: $c-bgcolor; 
-	-moz-border-radius: 50%;
+  line-height: $size + 2px;
+  background: $c-bgcolor;
+  -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
 
 // 三角形
-@mixin triangle($tri-border-color,$tri-border-width){
-	border-color: $tri-border-color;
-	border-style: solid;
-	border-width: $tri-border-width;
-}
-
-// 背景漸層
-// @include bgcLG(to bottom, $white, lighten($grey, 20%));
-@mixin bgcLG($direction, $c1, $c2) {
-  background: linear-gradient($direction, $c1 0, $c2 100%);
+@mixin triangle($tri-border-color, $tri-border-width) {
+  border-color: $tri-border-color;
+  border-style: solid;
+  border-width: $tri-border-width;
 }

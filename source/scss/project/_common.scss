@@ -1,118 +1,4 @@
 //------------------------------------------------------Icon Fonts
-.icon-support_hover:before {
-  content: "\e91f";
-}
-.icon-connnect_wrong:before {
-  content: "\e900";
-}
-.icon-support_education:before {
-  content: "\e901";
-}
-.icon-support_enterprise:before {
-  content: "\e902";
-}
-.icon-support_accessibility:before {
-  content: "\e903";
-}
-.icon-maintenance:before {
-  content: "\e904";
-}
-.icon-sidebar_mybike:before {
-  content: "\e905";
-}
-.icon-sidebar_setting:before {
-  content: "\e906";
-}
-.icon-sidebar_update:before {
-  content: "\e907";
-}
-.icon-header_alart:before {
-  content: "\e909";
-}
-.icon-header_support:before {
-  content: "\e90b";
-}
-.icon-printer:before {
-  content: "\e90d";
-}
-.icon-status_fail:before {
-  content: "\e90f";
-}
-.icon-recheck:before {
-  content: "\e910";
-}
-.icon-power:before {
-  content: "\e911";
-}
-.icon-status_success:before {
-  content: "\e912";
-}
-.icon-warning:before {
-  content: "\e914";
-}
-.icon-bluetooth:before {
-  content: "\e908";
-}
-.icon-changebike:before {
-  content: "\e90a";
-}
-.icon-period:before {
-  content: "\e90c";
-}
-.icon-sidebar_diagnoisis:before {
-  content: "\e90e";
-}
-.icon-dg2_bluetooth:before {
-  content: "\e913";
-}
-.icon-dg1_usb:before {
-  content: "\e916";
-}
-.icon-dg2_usb:before {
-  content: "\e918";
-}
-.icon-connect_bluetooth:before {
-  content: "\e91a";
-}
-.icon-maintenance_warning:before {
-  content: "\e91b";
-}
-.icon-connect_dongle:before {
-  content: "\e915";
-}
-.icon-connect_bike:before {
-  content: "\e917";
-}
-.icon-add:before {
-  content: "\e919";
-}
-.icon-remove:before {
-  content: "\e91c";
-}
-.icon-fullscreen:before {
-  content: "\e91d";
-}
-.icon-fullscreen_exit:before {
-  content: "\e91e";
-}
-.icon-mybike_exclamation:before {
-  content: "\f06a";
-}
-.icon-angle-left:before {
-  content: "\f104";
-}
-.icon-angle-right:before {
-  content: "\f105";
-}
-.icon-angle-up:before {
-  content: "\f106";
-}
-.icon-angle-down:before {
-  content: "\f107";
-}
-.icon-oops:before {
-  content: "\f12a";
-}
 
 //------------------------------------------------------基本全域CSS設定
 body {
@@ -131,27 +17,12 @@ a {
   color: $main_color;
   transition: color 0.2s linear;
 
-  &:link { //-還沒被訪問的樣式
-    text-decoration: none;
-  }
-  
-  &:active { //-滑鼠按下的樣式
-    text-decoration: none;
-  }
-  
-  &:visited { //-被訪問過的樣式
-    text-decoration: none;
-  }
-  
-  &:hover { //-滑鼠滑過的樣式
+  &:hover {
     color: lighten($main_color, 15%);
-    text-decoration: none;
   }
-  
-  &:focus { //-鍵盤聚焦的樣式
+
+  &:focus {
     color: lighten($main_color, 15%);
-    text-decoration: none;
-    outline: none;
   }
 }
 
@@ -162,10 +33,6 @@ a {
 
 :-ms-input-placeholder {
   @include rem(font-size, 1.6rem);
-}
-
-:focus:-ms-input-placeholder {
-  opacity: 0.5;
 }
 
 ::-moz-placeholder {
@@ -182,115 +49,14 @@ a {
 }
 
 //------------------------------------------------------Logo設定
-.brand_infoBox {
-  .brand_logo {
-    @include logo(url(~@/assets/images/logo_w.svg), center, 320px, 70px);
-  }
-
-  h1 {
-    @include logo-titleHide;
-    margin: 0;
-  }
-}
 
 //------------------------------------------------------Content設定
-.bg_hyLogo {
-  background: url(~@/assets/images/welcome/welcomebg.png);
-  background-repeat: repeat;
-}
 
 .content {
   margin-left: 226px;
 }
 
-//------------------------------------------------------Sweet Alert
-.swal2-header.alert_header {
-  padding: 20px 60px 10px 60px;
-  align-items: flex-start;
-  .swal2-title {
-    color: $main_color;
-    @include rem(font-size, 4rem);
-  }
-}
-.swal2-actions.alert_actions {
-  margin-bottom: 60px;
-}
-.swal2-confirm.alert_confirmBtn.swal2-styled{
-  border-radius: 25px !important;
-  width: 50%;
-  @include rem(font-size, 2rem);
-}
-.alert_container {
-  #swal2-content {
-    height: 140px;
-    color: $black;
-    @include rem(font-size, 2rem);
-    font-weight: 700;
-    text-align: left;
-    padding-left: 60px;
-  }
-}
-
-.alert_updateStyle {
-  padding: 6vh 2vw;
-  .prog_boxStyle {
-    border: 1px solid $white;
-    border-radius: 18px;
-    padding: 5px;
-    .progress {
-      box-shadow: none;
-      margin-bottom: 0;
-    }
-  }
-  
-  p {
-    color: $white;
-    @include rem(font-size, 1.8rem);
-    font-weight: 300;
-    margin-top: 15px;
-    margin-bottom: 0;
-
-    &.alert_updatePartName {
-      @include rem(font-size, 1.6rem);
-      text-align: left;
-      padding-left: 5px;
-      margin-top: 0;
-      margin-bottom: 10px;
-    }
-  }
-}
-
 //------------------------------------------------------元件部分
-.btn_twoGroup {
-  >button {
-    letter-spacing: 2px;
-    width: 300px;
-    + button {
-      margin-left: 10px;
-    }
-  }
-}
-
-.icon_centerBox {
-  @extend %center-box;
-  text-align: center;
-}
-
-.btn_mainStyle {
-  border-style: solid;
-  border-color: rgba($check_bgColor, .3);
-  border-width: 5px;
-  color: $white;
-
-  box-shadow: 2px 6px 12px 3px $black;
-  transition: all 0.2s linear;
-
-  &:hover, &:focus {
-    box-shadow: 0 0 12px 3px lighten($main_color, 10%);
-
-    color: $white;
-  }
-}
 
 //------------------------------------------------------ Table Style
 .table_base {
@@ -314,39 +80,6 @@ a {
 }
 
 //------------------------------------------------------ Title Bar
-.page_titlebar {
-  color: $white;
-  h1 {
-    @include rem(font-size, 6rem);
-    letter-spacing: 5px;
-  }
-}
-
-.title_greenText {
-    color: $main_color;
-    @include rem(font-size, 4.8rem);
-    text-align: center;
-    margin-bottom: 0;
-    margin-top: 0;
-}
-
-.title_radiusTitlebar {
-  background-color: $white;
-  border-radius: 16px;
-  display: inline-block;
-  font-size: 0;
-  line-height: 1;
-  padding: 6px 14px;
-  margin-bottom: 30px;
-
-  h5 {
-    color: $black;
-    @include rem(font-size, 1.8rem);
-    font-weight: 700;
-    line-height: 1;
-    margin: 0;
-  }
-}
 
 //------------------------------------------------------Page頁碼
 .pagebox {
@@ -419,17 +152,11 @@ a {
   }
 
   .page_arrow_right {
-    @include triangle(
-      transparent transparent transparent $white,
-      3px 0 3px 6px
-    );
+    @include triangle(transparent transparent transparent $white, 3px 0 3px 6px);
   }
 
   .page_arrow_left {
-    @include triangle(
-      transparent $white transparent transparent,
-      3px 6px 3px 0
-    );
+    @include triangle(transparent $white transparent transparent, 3px 6px 3px 0);
   }
 }
 
@@ -439,7 +166,7 @@ a {
     display: block;
     overflow: hidden;
     .imgbox {
-      @include bgimg();
+      @include bg-images();
       width: 100%;
       height: 100%;
       transform: scale(1);
@@ -478,7 +205,7 @@ a {
     display: inline-block;
     position: relative;
     width: 100%;
-    @include bgimg();
+    @include bg-images();
     &:hover {
       .overlay {
         opacity: 1;
@@ -642,22 +369,18 @@ a {
   @page {
     size: A4 portrait;
     margin: 0.5cm;
-    orphans:4;
-    widows:2;
+    orphans: 4;
+    widows: 2;
   }
 
-  nav, aside {
+  nav,
+  aside {
     display: none;
   }
 
   .content {
     padding: 0;
     margin: 0;
-  }
-
-  .list_smartParts {
-    grid-template-columns: repeat(2, 1fr) !important;
-    grid-column-gap: 30px !important;
   }
 
   a[href]:after {
